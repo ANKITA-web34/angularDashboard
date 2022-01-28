@@ -1,7 +1,7 @@
-<app-header></app-header>
+<app-header (toggleSidebarEvent)="sidebarToggle()"></app-header>
 
 <mat-drawer-container>
-    <mat-drawer mode="side" opened><app-sidebar></app-sidebar></mat-drawer>
+    <mat-drawer mode="side" [opened]="sidebarOpen"><app-sidebar></app-sidebar></mat-drawer>
     <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
 </mat-drawer-container>
 

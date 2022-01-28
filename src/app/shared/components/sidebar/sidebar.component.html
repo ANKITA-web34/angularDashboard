@@ -1,1 +1,26 @@
-<p>sidebar works!</p>
+<mat-nav-list>
+    <div class="profile-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf8_FBIRjGhcBNYtSmplsX2yIAT_jd1uzwmGYzeJ1Q3hUT76xLnOhsn-IhNqajve4KBlo&usqp=CAU">
+        <div class="header">
+            <h2>Ankita Chanal</h2>
+            <h4>ankitachanal34@gmail.com</h4>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <h4 mat-subheader>Pages</h4>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">Dashboard</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/posts">Posts</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/artical">Artical</a>
+    
+    <mat-divider></mat-divider>
+    <h4 mat-subheader>Tools</h4>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
+        <mat-icon>import_contacts</mat-icon>
+        Contacts
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
+        <mat-icon>contact_phone</mat-icon>
+        Leads
+    </a>
+
+</mat-nav-list>

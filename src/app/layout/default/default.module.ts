@@ -6,10 +6,11 @@ import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.componen
 import { PostsComponent } from 'src/app/modules/posts/posts.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
-
+import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card'
 
 @NgModule({
   declarations: [ DefaultComponent, DashboardComponent, PostsComponent ],
-  imports: [ CommonModule, RouterModule, SharedModule, MatSidenavModule ]
+  imports: [ CommonModule, RouterModule, SharedModule, MatSidenavModule, MatDividerModule, MatCardModule]
 })
 export class DefaultModule { }
