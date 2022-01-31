@@ -1,27 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 
-
 @Component({
-  selector: 'app-widgets-areas',
-  templateUrl: './areas.component.html',
-  styleUrls: ['./areas.component.css']
+  selector: 'app-widgets-cards',
+  templateUrl: './cards.component.html',
+  styleUrls: ['./cards.component.css']
 })
-export class AreasComponent implements OnInit {
-
-  Highcharts: typeof Highcharts = Highcharts; // required
+export class CardsComponent implements OnInit {
+  @Input() total: string = ''; 
+  @Input() precentage: string = '';
+  @Input() lable: string = '';
+    
+  Highcharts = Highcharts;
   chartOptions: Highcharts.Options = {};
-  
+
   constructor() { }
 
   ngOnInit(): void {
     this.chartOptions = {
       chart: {
-          type: 'areaspline'
+          type: 'areaspline',         
       },
       title: {
-          text: 'Average fruit consumption during one week'
+        text: 'One Direction'
       },
       legend: {
           layout: 'vertical',
@@ -31,11 +33,12 @@ export class AreasComponent implements OnInit {
           y: 100,
           floating: true,
           borderWidth: 1,
-          backgroundColor: '#FFFFFF'
+          backgroundColor: '#fff'
       },
       credits: { enabled: false },
       exporting: { enabled: true },
       xAxis: {
+          lineColor:'#fff',
           categories: [
               'Monday',
               'Tuesday',
@@ -45,6 +48,7 @@ export class AreasComponent implements OnInit {
               'Saturday',
               'Sunday'
           ],
+          
           plotBands: [{ // visualize the weekend
               from: 4.5,
               to: 6.5,
@@ -53,12 +57,11 @@ export class AreasComponent implements OnInit {
       },
       yAxis: {
           title: {
-              text: 'Fruit units'
+              text: 'Band member popularity',
           }
       },
       tooltip: {
           shared: true,
-          valueSuffix: ' units'
       },
       plotOptions: {
           areaspline: {
@@ -68,13 +71,13 @@ export class AreasComponent implements OnInit {
       series: [{
           name: 'John',
           type:'line',
-          data: [3, 4, 3, 5, 4, 10, 12],
-          color: '#381e85',
+          data: [38, 74, 23, 35, 44, 110, 102],
+          color: '#bdbdbd',
       }, {
           name: 'Jane',
           type:'line',
-          data: [1, 3, 4, 3, 3, 5, 4],
-          color: '#d7c9ff',
+          data: [109, 30, 404, 32, 34, 56, 74],
+          color: 'black',
       }]
     };
     HC_exporting(Highcharts);
@@ -84,5 +87,6 @@ export class AreasComponent implements OnInit {
         new Event('resize')
       )
     },300);
-  }
+  } 
+
 }

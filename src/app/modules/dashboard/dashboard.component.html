@@ -5,21 +5,29 @@
 <mat-divider></mat-divider>
 <br>
 
-<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="2px" class="stats-cards">
-    <mat-card fxFlex="25">
-        st
-    </mat-card>
-    <mat-card fxFlex="25">st
-    </mat-card>
-    <mat-card fxFlex="25">st
-    </mat-card>
-    <mat-card fxFlex="25">st
-    </mat-card>
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+   <mat-card fxFlex="20">
+    <app-widgets-cards lable='Harry' total='18k' precentage='99'></app-widgets-cards>
+   </mat-card>
+   <mat-card fxFlex="20">
+    <app-widgets-cards lable='Zyan' total='12k' precentage='85'></app-widgets-cards>
+   </mat-card>
+   <mat-card fxFlex="20">
+    <app-widgets-cards lable='Nail' total='10k' precentage='72'></app-widgets-cards>
+   </mat-card>
+   <mat-card fxFlex="20">
+    <app-widgets-cards lable='Louis' total='13k' precentage='80'></app-widgets-cards>
+   </mat-card>
+   <mat-card fxFlex="20">
+    <app-widgets-cards lable='Liam' total='11k' precentage='72'></app-widgets-cards>
+   </mat-card>
 </div>
 
 <mat-divider></mat-divider>
 
-<div>
-    <div>Table</div>
-    <div>Pie Chart</div>
+<div fxLayout="row" fxLayoutAlign='space-between center' fxGap='20px'>
+    <div fxFlex="60">Table</div>
+    <div fxFlex="40">
+        <app-widge-pie></app-widge-pie>
+    </div>
 </div>

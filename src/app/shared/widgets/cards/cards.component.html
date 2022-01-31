@@ -1,0 +1,15 @@
+<div class="text">
+  <h4>User: {{lable}}</h4>
+  <span class="total">{{total}}</span>
+  <span><mat-icon color="primary">trending_up</mat-icon></span>
+  <span class="discripation" style="margin-right: 9px;">{{precentage}}%</span>
+  <span>of target</span>
+</div>
+
+<div class="widget">
+  <highcharts-chart 
+    [Highcharts]="Highcharts"
+    [options]="chartOptions"
+    style="width: 100%; height: 250px; display: block; color: #fff;"
+  ></highcharts-chart>
+</div>
