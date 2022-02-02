@@ -1,5 +1,5 @@
 <div>
-    <app-widgets-areas></app-widgets-areas>
+    <app-widgets-areas ></app-widgets-areas> <!--[data]="bigChart"-->
 </div>
 <br>
 <mat-divider></mat-divider>
@@ -7,19 +7,19 @@
 
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
    <mat-card fxFlex="20">
-    <app-widgets-cards lable='Harry' total='18k' precentage='99'></app-widgets-cards>
+    <app-widgets-cards lable='Harry' total='18k' precentage='99' [data]="cards">Harray</app-widgets-cards>
    </mat-card>
    <mat-card fxFlex="20">
-    <app-widgets-cards lable='Zyan' total='12k' precentage='85'></app-widgets-cards>
+    <app-widgets-cards lable='Zyan' total='12k' precentage='85' [data]="cards"></app-widgets-cards>
    </mat-card>
    <mat-card fxFlex="20">
-    <app-widgets-cards lable='Nail' total='10k' precentage='72'></app-widgets-cards>
+    <app-widgets-cards lable='Nail' total='10k' precentage='72' [data]="cards"></app-widgets-cards>
    </mat-card>
    <mat-card fxFlex="20">
-    <app-widgets-cards lable='Louis' total='13k' precentage='80'></app-widgets-cards>
+    <app-widgets-cards lable='Louis' total='13k' precentage='80' [data]="cards"></app-widgets-cards>
    </mat-card>
    <mat-card fxFlex="20">
-    <app-widgets-cards lable='Liam' total='11k' precentage='72'></app-widgets-cards>
+    <app-widgets-cards lable='Liam' total='11k' precentage='72' [data]="cards"></app-widgets-cards>
    </mat-card>
 </div>
 
@@ -28,6 +28,6 @@
 <div fxLayout="row" fxLayoutAlign='space-between center' fxGap='20px'>
     <div fxFlex="60">Table</div>
     <div fxFlex="40">
-        <app-widge-pie></app-widge-pie>
+        <app-widge-pie [data]="pieCharts"></app-widge-pie>
     </div>
 </div>

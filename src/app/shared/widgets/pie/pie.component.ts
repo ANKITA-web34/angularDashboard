@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 
@@ -10,6 +10,7 @@ import HC_exporting from 'highcharts/modules/exporting';
 export class PieComponent implements OnInit {
   Highcharts = Highcharts;
   chartOptions: Highcharts.Options = {};
+  @Input() data:any = [];
 
   constructor() {}
 
@@ -55,20 +56,7 @@ export class PieComponent implements OnInit {
           type: 'pie',
           name: 'Fans',
           innerSize: '50%',
-          data: [
-            ['Australia', 13.29],
-            ['Belarus', 13],
-            ['Denmark', 3.78],
-            ['Japan', 3.42],
-            ['India', 58.9,],
-            {
-              name: 'Other',
-              y: 7.61,
-              dataLabels: {
-                enabled: false,
-              },
-            },
-          ],
+          data: this.data,
         },
       ],
     };

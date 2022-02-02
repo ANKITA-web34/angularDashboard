@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 
@@ -12,7 +12,7 @@ export class AreasComponent implements OnInit {
 
   Highcharts: typeof Highcharts = Highcharts; // required
   chartOptions: Highcharts.Options = {};
-  
+  @Input() data: any = [];
   constructor() { }
 
   ngOnInit(): void {
@@ -66,16 +66,26 @@ export class AreasComponent implements OnInit {
           }
       },
       series: [{
-          name: 'John',
+          name: 'Harray styles',
           type:'line',
-          data: [3, 4, 3, 5, 4, 10, 12],
-          color: '#381e85',
+          data: [300, 403, 103, 200, 150, 109, 10],
       }, {
-          name: 'Jane',
+          name: 'Zyan Malik',
           type:'line',
-          data: [1, 3, 4, 3, 3, 5, 4],
-          color: '#d7c9ff',
-      }]
+          data: [100, 31, 24, 43, 93, 52, 14],
+      },{
+        name: 'Niall Horan',
+        type:'line',
+        data: [10, 30, 43, 30, 35, 50, 24],
+    },{
+        name: 'Louis Tomlinson',
+        type:'line',
+        data: [16, 38, 99, 31, 53, 75, 24],
+    },{
+        name: 'Liam Payne',
+        type:'line',
+        data: [18, 31, 94, 38, 39, 50, 24],
+    }]
     };
     HC_exporting(Highcharts);
 

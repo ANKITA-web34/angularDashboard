@@ -11,6 +11,8 @@ export class CardsComponent implements OnInit {
   @Input() total: string = ''; 
   @Input() precentage: string = '';
   @Input() lable: string = '';
+  @Input() data: any = [];
+
     
   Highcharts = Highcharts;
   chartOptions: Highcharts.Options = {};
@@ -71,12 +73,12 @@ export class CardsComponent implements OnInit {
       series: [{
           name: 'John',
           type:'line',
-          data: [38, 74, 23, 35, 44, 110, 102],
+          data: this.data,
           color: '#bdbdbd',
       }, {
           name: 'Jane',
           type:'line',
-          data: [109, 30, 404, 32, 34, 56, 74],
+          data: this.data,
           color: 'black',
       }]
     };
