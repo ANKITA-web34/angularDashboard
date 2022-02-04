@@ -1,4 +1,4 @@
-<mat-nav-list>
+<mat-nav-list class="font-size">
     <div class="profile-img">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf8_FBIRjGhcBNYtSmplsX2yIAT_jd1uzwmGYzeJ1Q3hUT76xLnOhsn-IhNqajve4KBlo&usqp=CAU">
         <div class="header">
@@ -8,19 +8,52 @@
     </div>
     <mat-divider></mat-divider>
     <h4 mat-subheader>Pages</h4>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">Dashboard</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/posts">Posts</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/map">Map</a>
+        <a mat-list-item routerLinkActive="themColor" [routerLinkActiveOptions]="{exact:true}" routerLink="/"><h5>Dashboard</h5></a>
+
+    <h4 mat-subheader>User</h4>    
+    <div class="agent">
+        <mat-list-item  (click)="showSubMenuAgent = !showSubMenuAgent"> 
+            <span class="full-width">Agent</span>
+            <mat-icon class="menu-button" [style.margin-left]="'9.1rem'" [ngClass]="{'rotated' : showSubMenuAgent}" (click)="matIconButton()">expand_more</mat-icon>
+        </mat-list-item>
+        <div class="submenu" *ngIf="toggleButton" [ngClass]="{'expanded' : showSubMenuAgent}">
+            <a mat-list-item routerLinkActive="themColor" [routerLinkActiveOptions]="{exact:true}" routerLink="/agent-list"><h5>Agent List</h5></a>
+            <a mat-list-item routerLinkActive="themColor" [routerLinkActiveOptions]="{exact:true}" routerLink="/add-agent"><h5>Add Agent</h5></a>
+        </div>
+    </div>
+    <div class="customer">
+        <mat-list-item  (click)="showSubMenuCustomer = !showSubMenuCustomer"> 
+            <span class="full-width">Customer</span>
+            <mat-icon class="menu-button" [style.margin-left]="'7.8rem'" [ngClass]="{'rotated' : showSubMenuCustomer}" (click)="matIconButtonForCustomer()">expand_more</mat-icon>
+        </mat-list-item>
+        <div class="submenu" *ngIf="toggleButtonCustomer" [ngClass]="{'expanded' : showSubMenuCustomer}">
+            <a mat-list-item routerLinkActive="themColor" [routerLinkActiveOptions]="{exact:true}" routerLink="/customer-list"><h5>Customer List</h5></a>
+            <a mat-list-item routerLinkActive="themColor" [routerLinkActiveOptions]="{exact:true}" routerLink="/add-customer"><h5>Add Customer</h5></a>
+        </div>
+    </div>
+    <div class="order">
+        <mat-list-item  (click)="showSubMenuOrder = !showSubMenuOrder"> 
+            <span class="full-width">Order</span>
+            <mat-icon class="menu-button" [style.margin-left]="'9.3rem'" [ngClass]="{'rotated' : showSubMenuOrder}" (click)="matIconButtonForOrder()">expand_more</mat-icon>
+        </mat-list-item>
+        <div class="submenu" *ngIf="toggleButtonOrder" [ngClass]="{'expanded' : showSubMenuOrder}">
+            <a mat-list-item routerLinkActive="themColor" [routerLinkActiveOptions]="{exact:true}" routerLink="/order-list"><h5>Order List</h5></a>
+            <a mat-list-item routerLinkActive="themColor" [routerLinkActiveOptions]="{exact:true}" routerLink="/add-order"><h5>Add Order</h5></a>
+        </div>
+    </div>
+
+    <h4 mat-subheader>Other</h4>
+        <a mat-list-item routerLinkActive="themColor" [routerLinkActiveOptions]="{exact:true}" routerLink="/posts"><h5>Posts</h5></a>
+        <a mat-list-item routerLinkActive="themColor" [routerLinkActiveOptions]="{exact:true}" routerLink="/map"><h5>Map</h5></a>
     
     <mat-divider></mat-divider>
     <h4 mat-subheader>Tools</h4>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
         <mat-icon>import_contacts</mat-icon>
-        Contacts
+        <h5>Contacts</h5>
     </a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
         <mat-icon>contact_phone</mat-icon>
-        Leads
+        <h5>Leads</h5>
     </a>
-
 </mat-nav-list>

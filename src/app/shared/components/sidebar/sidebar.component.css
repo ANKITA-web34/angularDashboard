@@ -14,3 +14,36 @@ img {
     object-fit: cover;
     border-radius: 50%;
 }
+
+.themColor { color: #523b96; }
+
+.agent mat-icon { cursor: pointer; }
+
+/*********************************/
+
+.menu-button {
+    transition: 300ms ease-in-out;
+    transform: rotate(0deg);
+    margin-left: 9rem;
+}
+
+.menu-button.rotated {
+    transform: rotate(180deg);
+}
+
+.submenu {
+    overflow-y: hidden;
+    transition: all 300ms ease;
+    transform: scaleY(0);
+    transform-origin: top;
+    padding-left: 30px;
+}
+
+.submenu.expanded {
+    transform: scaleY(1);
+}
+
+mat-list-item span { font-size: 12px; }
+ 
+
+
